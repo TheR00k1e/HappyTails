@@ -1,0 +1,21 @@
+#Users Veterinarios
+Nombre de usuario: VETPedro
+Password: Pedro2024
+
+Nombre de usuario: VETSofia
+Password: Sofia2024
+
+Nombre de usuario: VETJhon
+Password: Jhon2024
+
+Nombre de usuario: VETRosa
+Password: Rosa2024
+
+
+#User Recepcionista
+Nombre de usuario: RECAlejandra
+Password: Recep2024
+
+User cliente:
+Nombre de usuario: atrivino
+Password: dani123456
