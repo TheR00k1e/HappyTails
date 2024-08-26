@@ -1,0 +1,153 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% block contenido %}
+{% load static %}
+<title>{% if form.instance.pk %}Editar Paciente{% else %}Crear Paciente{% endif %}</title>
+<body>
+    <main>
+        <div class="modal modal-signin position-static d-block py-5">
+            <div class="modal-dialog my-5">
+                <div class="modal-content rounded-5 shadow">
+                    {% if form.errors %}
+                    <div class="modal-content shadow text-center error rounded-bottom rounded-5">
+                        <span class="rounded-bottom rounded-5">Corrige los errores en el formulario.</span>
+                    </div>
+                    {% endif %}
+                    {% if success %}
+                    <div class="modal-content shadow text-center success rounded-bottom rounded-5">
+                        <span class="rounded-bottom rounded-5">Datos guardados correctamente.</span>
+                    </div>
+                    {% endif %}
+                    <div class="d-flex justify-content-center py-4">
+                        <a class="login__logo navbar-brand" href="{% url 'index' %}">Happy<span>Tails</span>&trade;</a>
+                    </div>
+                    <div class="modal-header pb-2 border-bottom-0 justify-content-center">
+                        <h2 class="h3 mt-2 mb-4">{% if form.instance.pk %}Editar Mascota{% else %}Crear Mascota{% endif %}</h2>
+                    </div>
+                    <div class="modal-body p-5 pt-0">
+                        <form method="post" id="crear-editar-paciente-form">
+                            {% csrf_token %}
+                            {% for error in form.non_field_errors %}
+                            <div class="alert alert-danger">
+                                {{ error }}
+                            </div>
+                            {% endfor %}
+                            
+                            <div class="form-floating mb-4">
+                                {{ form.nombre_paciente|add_class:"form-control rounded-4"}}
+                                <label for="{{ form.nombre_paciente.id_for_label }}">Nombre Mascota</label>
+                                {% for error in form.nombre_paciente.errors %}
+                                <div class="invalid-feedback d-block">
+                                    {{ error }}
+                                </div>
+                                {% endfor %}
+                            </div>
+                            <div class="form-floating mb-4">
+                                {{ form.sexo_paciente|add_class:"form-select form-control rounded-4"}}
+                                <label for="{{ form.sexo_paciente.id_for_label }}">Sexo Mascota</label>
+                                {% for error in form.sexo_paciente.errors %}
+                            <div class="invalid-feedback d-block">
+                                {{ error }}
+                            </div>
+                            {% endfor %}
+                            </div>
+                            
+                            <div class="form-floating mb-4">
+                                <input type="date" class="form-control rounded-4" id="id_fecha_nacimiento_paciente" name="fecha_nacimiento_paciente" autocomplete="off" value="{% if form.fecha_nacimiento_paciente.value %}{{ form.fecha_nacimiento_paciente.value|date:"Y-m-d" }}{% endif %}">
+                                <label for="id_fecha_nacimiento_paciente">Fecha de Nacimiento</label>
+                                {% for error in form.fecha_nacimiento_paciente.errors %}
+                                <div class="invalid-feedback d-block">
+                                    {{ error }}
+                                </div>
+                                {% endfor %}
+                            </div>
+
+                            <div class="form-floating mb-4">
+                                {{ form.color_paciente|add_class:"form-control rounded-4" }}
+                                <label for="{{ form.color_paciente.id_for_label }}">Color Mascota</label>
+                                {% for error in form.color_paciente.errors %}
+                                <div class="invalid-feedback d-block">
+                                    {{ error }}
+                                </div>
+                                {% endfor %}
+                            </div>
+
+                            <div class="form-floating mb-4">
+                                {{ form.observacion_paciente|add_class:"form-control rounded-4" }}
+                                <label for="{{ form.observacion_paciente.id_for_label }}">Observaciones</label>
+                                {% for error in form.observacion_paciente.errors %}
+                                <div class="invalid-feedback d-block">
+                                    {{ error }}
+                                </div>
+                                {% endfor %}
+                            </div>
+
+                            <div class="form-floating mb-4">
+                                {{ form.tipo_paciente|add_class:"form-select form-control rounded-4" }}
+                                <label for="{{ form.tipo_paciente.id_for_label }}">Tipo de Mascota</label>
+                                {% for error in form.tipo_paciente.errors %}
+                                <div class="invalid-feedback d-block">
+                                    {{ error }}
+                                </div>
+                                {% endfor %}
+                            </div>
+                            <div class="form-floating mb-4">
+                                {{ form.tipo_tratamiento|add_class:"form-select form-control rounded-4" }}
+                                <label for="{{ form.tipo_tratamiento.id_for_label }}">Seleccione si ha tenido algún tratamiento</label>
+                                {% for error in form.tipo_tratamiento.errors %}
+                            <div class="invalid-feedback d-block">
+                                {{ error }}
+                            </div>
+                            {% endfor %}
+                            </div>
+                            <button class="w-100 mb-2 btn btn-lg btn-acceder boton-registrarse" type="submit">{% if form.instance.pk %}Guardar{% else %}Crear{% endif %}</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('crear-editar-paciente-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita el envío predeterminado del formulario
+            
+            // Simulación de guardar datos
+            setTimeout(function() {
+                // Muestra un mensaje de éxito con SweetAlert2
+                Swal.fire({
+                    icon: 'success',
+                    title: '¡Datos guardados correctamente!',
+                    showConfirmButton: true,
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // Opcional: redirigir o realizar otras acciones después de confirmar
+                        // Por ejemplo, redirigir a otra página
+                        document.getElementById('crear-editar-paciente-form').submit();
+                    }
+                });
+            }, 1000); // Simulación de una espera de 1 segundo antes de mostrar el mensaje
+        });
+    });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        flatpickr('#id_fecha_nacimiento_paciente', {
+            dateFormat: 'Y-m-d',
+            enableTime: false,
+            locale: {
+                firstDayOfWeek: 1, // Lunes como primer día de la semana
+                weekdays: {
+                    shorthand: ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'],
+                    longhand: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+                },
+                months: {
+                    shorthand: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+                    longhand: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+                },
+            },
+        });
+    });
+</script>
+{% endblock %}
