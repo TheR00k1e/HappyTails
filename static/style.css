@@ -1,0 +1,498 @@
+*{
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body{
+    font-family: "Inter", sans-serif;
+    overflow-x: hidden;
+}
+
+.bg-verde{
+    background-image: radial-gradient(circle at 74.65% 14.8%, #1cb29d 0, #0ea496 16.67%, #04968e 33.33%, #048683 50%, #097778 66.67%, #0e696c 83.33%, #135c62 100%);
+}
+
+.btn-logout {
+    color: white!important;
+    background-color: #048683;
+}
+
+.btn-logout:hover {
+    background-color: #06a3a1!important;
+}
+
+.tabla-esquina-1{
+    border-top-left-radius: 18px;
+
+}
+
+.tabla-esquina-2{
+    border-top-right-radius: 18px;
+
+}
+
+.tabla-esquina-3{
+    border-bottom-left-radius: 18px;
+
+}
+
+.tabla-esquina-4{
+    border-bottom-right-radius: 18px;
+
+}
+
+
+.tabla-citas, th{
+    border: transparent;
+}
+
+/*navbar*/
+
+.navbar-brand{
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.barra__navegacion{
+    padding-inline: 30px;
+}
+
+.navbar-brand span{
+    color: #048683;
+}
+
+.texto__usuario p{
+    margin: 0 10px;
+    font-weight: 500;
+}
+
+.nav-link{
+    font-weight: 600;
+    font-size: 18px;
+    color: #000000;
+}
+
+.nav-link::after{
+    content: '';
+    width: 0;
+    height: 2px;
+    display: block;
+    background: #048683;
+    transition: .4s;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link:hover{
+    color: #048683;
+}
+
+.avatar{
+    width: 30px;
+
+}
+
+/*Popover card avatar*/
+.popover {
+    max-width: 300px;
+}
+.popover-body {
+    padding: 0;
+}
+.card-popover {
+    width: 100%;
+    border: none;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+.card-popover .card-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+    display: flex;
+    align-items: center;
+}
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.popover-header {
+    display: none;
+}
+.card-popover .card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 2px;
+}
+.user-info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+.user-info strong {
+    margin-bottom: 0.2rem;
+}
+.user-info small {
+    color: #6c757d;
+}
+  
+
+
+/*Footer*/
+
+.container__footer{
+    background-color: #ffffff;
+    color: #000000;
+}
+
+
+.footer{
+    max-width: 1800px;
+    margin-inline: auto;
+}
+
+.footer__titulo{
+    font-weight: 600;
+    color: #048683;
+}
+
+.footer__parrafo{
+    font-size: 18px;
+}
+
+.footer__enlace{
+    color: #000000;
+    text-decoration: none;
+}
+
+.footer__enlace:hover{
+    color: #048684;
+}
+
+.bi{
+    font-size: 24px;
+    color: rgb(0, 0, 0);
+    margin-right: 10px;
+}
+
+.bi:hover{
+    color: #048683;
+}
+
+.footer__hr {
+    border: 1px solid;
+    border-color: #048683;
+}
+
+.footer__hr {
+    border: 1px solid;
+    border-color: #ffffff;
+}
+
+
+
+
+
+/*Login*/
+
+.modal{
+    background-image: radial-gradient(circle at 74.65% 14.8%, #1cb29d 0, #0ea496 16.67%, #04968e 33.33%, #048683 50%, #097778 66.67%, #0e696c 83.33%, #135c62 100%);
+}
+
+.login__logo{
+    font-size: 48px;
+}
+
+.modal-content{
+    border: none;
+    box-shadow: 1px 1px 10px #a0a0a0!important;
+}
+
+.form-control{
+    border : 1px solid #9c9c9c;
+}
+
+.login__link{
+    color: #048683;
+}
+
+.login__link:hover{
+    color: #000000;
+}
+
+.form-control:focus {
+    border-color: #04868480;
+    -webkit-box-shadow: 0 0 8px #048683;
+    box-shadow: 0 0 8px #048683;
+}
+
+input{
+    caret-color: #048683;
+}
+
+/*boton*/
+
+.btn-acceder{
+    --bs-btn-font-weight: 400;
+    --bs-btn-color: #FFFFFF;
+    --bs-btn-bg: #048683;
+    --bs-btn-border-color: #048683;
+    --bs-btn-border-radius: .4rem;
+    --bs-btn-hover-color: #048683;
+    --bs-btn-hover-bg: #FFFFFF;
+    --bs-btn-hover-border-color: #048683;
+    --bs-btn-active-color: #FFFFFF;
+    --bs-btn-active-bg: #048683;
+    --bs-btn-active-border-color: #048683;
+}
+
+.btn-acceder a{
+    text-decoration: none;
+    color: #FFFFFF;
+} 
+
+.btn-acceder a:hover{
+    color: #048683;
+}
+
+/* error sigin y signup */
+
+.error span{
+    font-size: 18px;
+    background-color: rgb(194, 16, 16);
+    color: #FFFFFF;
+}
+
+
+/* estilo carrusel  */
+
+.carousel-inner{
+    height: 70vh;
+}
+
+.banner1 img {
+    height: 70vh;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.banner2 img {
+    height: 70vh;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.banner3 img {
+    height: 70vh;
+    object-fit: cover;
+    object-position: center top;
+}
+
+/* especialidades */
+
+.container__especialidades{
+    margin: 80px 0;
+}
+
+.container__especialidades h2{
+    font-weight: 600;
+}
+
+.huella{
+    width: 30px;;
+}
+
+.row__imagenes{
+    max-width: 1200px;
+    margin-inline: auto;
+}
+
+.bg__especialidad{
+    background-color: #048683;
+}
+
+.titulo__especialidad{
+    font-size: 16px;
+    font-weight: 600;
+    color: #048683;
+}
+
+
+/* tarjetas */
+
+.container__cards{
+    background-image: radial-gradient(circle at 74.65% 14.8%, #1cb29d 0, #0ea496 16.67%, #04968e 33.33%, #048683 50%, #097778 66.67%, #0e696c 83.33%, #135c62 100%);
+}
+
+
+.titulo__valoracion{
+    color: #FFFFFF;
+    font-size: 38px;
+    font-weight: 900;
+    margin: 0;
+    text-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+    letter-spacing: -1px;
+}
+
+.card{
+    box-shadow: 0 8px 13px rgba(0, 0, 0, 0.3);
+}
+
+.card-title{
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.card-body p{
+    font-size: 14px;
+}
+
+.bi-quote{
+    margin-inline: 4px;
+}
+
+.star {
+    color: goldenrod;
+    font-size: 1.5rem;
+    margin: 0 3px;
+}
+
+.star:hover {
+    color: goldenrod;
+}
+
+
+
+/* Capitaliza la primera letra */
+.capitalize {
+    text-transform: capitalize; 
+}
+
+
+/* eye password */
+
+.bi-eye-slash-fill, .bi-eye-fill {
+    position: absolute;
+    font-size: 28px;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 1rem;
+}
+
+.bi-eye-slash-fill:hover{
+    color: #000;
+}
+
+
+/* Contacto */
+
+.container__contacto{
+    background-image: radial-gradient(circle at 74.65% 14.8%, #1cb29d 0, #0ea496 16.67%, #04968e 33.33%, #048683 50%, #097778 66.67%, #0e696c 83.33%, #135c62 100%);
+}
+
+iframe{
+    width: 100%;
+    height: 100%;
+    border: 1px solid #999999;
+}
+
+.exclamacion{
+    color: #048683;
+}
+
+.link__trabajo{
+    color: #FFFFFF;
+}
+
+
+/* nosotros */
+
+.container__veterinarios{
+    background-image: radial-gradient(circle at 74.65% 14.8%, #1cb29d 0, #0ea496 16.67%, #04968e 33.33%, #048683 50%, #097778 66.67%, #0e696c 83.33%, #135c62 100%);
+}
+
+
+.subcontainer__veterinarios img{
+    object-fit: cover;
+    object-position: center center;
+}
+
+
+.bannercontacto img {
+    height: 70vh;
+    object-fit: cover;
+    object-position: center center;
+}
+
+
+/* servicios */
+
+
+.container__servicios{
+    background-image: radial-gradient(circle at 74.65% 14.8%, #1cb29d 0, #0ea496 16.67%, #04968e 33.33%, #048683 50%, #097778 66.67%, #0e696c 83.33%, #135c62 100%);
+}
+
+
+.titulo__servicios{
+    color: #FFFFFF;
+    font-size: 3rem;
+}
+
+
+.service-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.service-overlay {
+    background: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.service-container:hover .service-overlay {
+    opacity: 1;
+}
+
+.service-image {
+    width: 100%;
+}
+
+.service-details {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.service-container:hover .service-details {
+    opacity: 1;
+}
+
+.service-title {
+    color: #ffffff;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5em;
+    text-transform: uppercase;
+}
+
+.service-description {
+    color: #ffffff;
+    font-size: 0.9em;
+}
+
+
