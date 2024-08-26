@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% block contenido %}
+{% load static %}
+<body>
+    <main>
+        <div class="container-fluid bg-verde">
+            <div class="container p-5">
+                <h2 class="text-center py-5 text-white">Mis Citas</h2>
+                <table class="table table-light table-sm table-bordered-dark table-hover text-center tabla-citas">
+                    <thead>
+                        <tr>
+                            <th class="tabla-esquina-1"><br></th>
+                            <th><br></th>
+                            <th><br></th>
+                            <th><br></th>
+                            <th><br></th>
+                            <th class="tabla-esquina-2"><br></th>
+                        </tr>
+                    </thead>
+                    <thead>
+                        <tr>
+                            <th>Nombre Cliente</th>
+                            <th>Veterinario</th>
+                            <th>Especialidad</th>
+                            <th>Sucursal</th>
+                            <th>Fecha cita</th>
+                            <th>Horario cita</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for cita in citas %}
+                        <tr>
+                            <td class="text-capitalize">{{ cita.usuario.first_name }} {{ cita.usuario.last_name }}</td>
+                            <td>{{ cita.veterinario }}</td>
+                            <td>{{ cita.veterinario.especialidad.nombre_especialidad }}</td>
+                            <td>{{ cita.sucursal.nombre_clinica }} - {{ cita.sucursal.direccion_clinica }}</td>
+                            <td>{{ cita.fecha_cita|date:"d/m/Y" }}</td>
+                            <td>{{ cita.get_horario_display }}</td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="2">No tienes citas registradas.</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                    <thead>
+                        <tr>
+                            <th class="tabla-esquina-3"><br></th>
+                            <th><br></th>
+                            <th><br></th>
+                            <th><br></th>
+                            <th><br></th>
+                            <th class="tabla-esquina-4"><br></th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </main>
+</body>
+{% endblock %}

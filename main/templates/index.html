@@ -1,0 +1,157 @@
+{% extends 'base.html' %}
+ {% block contenido %} 
+ {% load static %}
+<title>Happy Tails</title>
+
+<body>
+  <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+        aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+        aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active banner1" data-bs-interval="6000">
+        <img src={% static 'img/banner1.jpg' %} class="d-block w-100"/>
+      </div>
+      <div class="carousel-item banner2" data-bs-interval="6000">
+        <img src={% static 'img/banner2.jpg' %} class="d-block w-100"/>
+      </div>
+      <div class="carousel-item banner3" data-bs-interval="6000">
+        <img src={% static 'img/banner3.jpg' %} class="d-block w-100"/>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <div class="container-fluid container__especialidades">
+    <div class="row justify-content-around my-3 py-3 text-center row__imagenes gap-1 gap-md-0 gap-lg-4">
+      <div class="col-12">
+        <h2>Bienestar Animal  <img src={% static 'img/huella.svg' %} class="huella"></h2>
+      </div>
+      <hr class="footer__hr"/>
+      <div class="col-3 col-md-2 col-lg-1 p-1 my-1 p-md-3 my-md-2 p-lg-0">
+        <img src={% static 'img/estetoscopio.svg' %} class="rounded-4 bg__especialidad contenedor__imagenes my-2"/>
+        <span class="titulo__especialidad">Control de salud</span>
+      </div>
+      <div class="col-3 col-md-2 col-lg-1 p-1 my-1 p-md-3 my-md-2 p-lg-0">
+        <img src={% static 'img/vacuna.svg' %} class="rounded-4 bg__especialidad contenedor__imagenes my-2"/>
+        <span class="titulo__especialidad">Vacunas</span>
+      </div>
+      <div class="col-3 col-md-2 col-lg-1 p-1 my-1 p-md-3 my-md-2 p-lg-0">
+        <img src={% static 'img/diente.svg' %} class="rounded-4 bg__especialidad contenedor__imagenes my-2"/>
+        <span class="titulo__especialidad">Control dental</span>
+      </div>
+      <div class="col-3 col-md-2 col-lg-1 p-1 my-1 p-md-3 my-md-2 p-lg-0">
+        <img src={% static 'img/cirugias.svg' %} class="rounded-4 bg__especialidad contenedor__imagenes my-2"/>
+        <span class="titulo__especialidad comportamiento">Cirugías</span>
+      </div>
+      <div class="col-3 col-md-2 col-lg-1 p-1 my-1 p-md-3 my-md-2 p-lg-0">
+        <img src={% static 'img/comida.svg' %} class="rounded-4 bg__especialidad contenedor__imagenes my-2"/>
+        <span class="titulo__especialidad">Nutrición</span>
+      </div>
+      <div class="col-3 col-md-2 col-lg-1 p-1 my-1 p-md-3 my-md-2 p-lg-0">
+        <img src={% static 'img/garrapata.svg' %} class="rounded-4 bg__especialidad contenedor__imagenes my-2"/>
+        <span class="titulo__especialidad">Control parasitario</span>
+      </div>
+      <hr class="footer__hr"/>
+    </div>
+  </div>
+  <div class="container-fluid text-center container__cards">
+    <div class="container">
+      <div class="row justify-content-around justify-content-md-center">
+        <div class="col-12 mt-4 mt-lg-5">
+          <h2 class="titulo__valoracion">Valoración de nuestros clientes</h2>
+        </div>
+
+        <div class="card-group col-9 col-md-5 col-lg-3 mt-4 mb-4 my-md-4 my-lg-5">
+          <div class="card border-0 rounded-4">
+            <img src={% static 'img/testimonio1.jpg' %} class="card-img-top rounded-bottom rounded-4" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">María M.</h5>
+            <p class="card-text"><i class="bi bi-quote"></i>¡Excelente servicio! La veterinaria fue muy amable y profesional. Mi mascota recibió un tratamiento de alta calidad y mejoró rápidamente. Definitivamente recomendaría esta clínica.</p>
+          </div>
+          <div class="card-footer">
+            <div class="stars">
+              <i class="bi bi-star-fill star"></i>
+              <i class="bi bi-star-fill star"></i>
+              <i class="bi bi-star-fill star"></i>
+              <i class="bi bi-star-fill star"></i>
+              <i class="bi bi-star-fill star"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-group col-9 col-md-5 col-lg-3 mb-4 my-md-4 my-lg-5">
+        <div class="card border-0 rounded-4">
+          <img src={% static 'img/testimonio2.jpg' %} class="card-img-top rounded-bottom rounded-4" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Pedro P.</h5>
+            <p class="card-text"><i class="bi bi-quote"></i>Increíble atención y cuidado. Siempre explican todo con detalle y se nota que aman a los animales.</p>
+          </div>
+          <div class="card-footer">
+            <div class="stars">
+              <i class="bi bi-star-fill star"></i>
+              <i class="bi bi-star-fill star"></i>
+              <i class="bi bi-star-fill star"></i>
+              <i class="bi bi-star-fill star"></i>
+              <i class="bi bi-star-fill star"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="card-group col-9 col-md-5 col-lg-3 mb-4 my-md-4 my-lg-5">
+        <div class="card border-0 rounded-4">
+          <img src={% static 'img/testimonio3.jpg' %} class="card-img-top rounded-bottom rounded-4" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Carolina T.</h5>
+            <p class="card-text"><i class="bi bi-quote"></i>Siempre confío en esta veterinaria para el cuidado de mi mascota. Profesionales y comprometidos.</p>
+          </div>
+          <div class="card-footer">
+            <div class="stars">
+              <i class="bi bi-star-fill star"></i>
+              <i class="bi bi-star-fill star"></i>
+              <i class="bi bi-star-fill star"></i>
+              <i class="bi bi-star-fill star"></i>
+              <i class="bi bi-star-fill star"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-group col-9 col-md-5 col-lg-3 mb-4 my-md-4 my-lg-5">
+        <div class="card border-0 rounded-4">
+          <img src={% static 'img/testimonio4.jpg' %} class="card-img-top rounded-bottom rounded-4" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Giselle M.</h5>
+            <p class="card-text"><i class="bi bi-quote"></i>Muy buen servicio en general. Sin embargo, tuve que esperar un poco más de lo esperado.</p>
+          </div>
+          <div class="card-footer">
+            <div class="stars">
+              <i class="bi bi-star-fill star"></i>
+              <i class="bi bi-star-fill star"></i>
+              <i class="bi bi-star-fill star"></i>
+              <i class="bi bi-star-fill star"></i>
+              <i class="bi bi-star-half star"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+   </div>
+  </div>
+  </div>
+</body>
+{% endblock %}

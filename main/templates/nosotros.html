@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+{% block contenido %}
+{% load static %}
+<title>Nosotros</title>
+
+<body>
+    <div class="container-fluid px-0">
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item bannercontacto active">
+                    <img class="d-block w-100 clinica1" src="/static/img/bannernosotros.jpg" alt="First slide">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container-fluid p-3">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-12 my-3 my-lg-5">
+                    <h2 class="py-3 m-0">Quiénes Somos</h2>
+                    <hr class="footer__hr"/>
+                    <p class="text-start fs-5 m-0">En la Clínica Veterinaria Happy Tails, somos un equipo dedicado al cuidado integral de tus
+                        mascotas.
+                        Ofrecemos servicios veterinarios de alta calidad en un ambiente cálido y acogedor.
+                        Nuestra prioridad es el bienestar físico y emocional de tus compañeros peludos,
+                        desde consultas médicas hasta emergencias, estamos aquí para brindarles el mejor
+                        cuidado posible.
+                        ¡Únete a nuestra familia en Happy Tails y experimenta la diferencia que podemos hacer juntos en
+                        la vida de tus mascotas!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid container__veterinarios">
+        <div class="container">
+            <div class="row subcontainer__veterinarios text-center text-white px-2 py-lg-3">
+                <div class="col-lg-3 mt-5 mb-4 mt-lg-4">
+                    <img src={% static 'img/veterinario1.jpg' %} class="rounded-circle" width="140" height="140">
+                    <h4 class="fw-normal fw-bold mt-3">SOFÍA ACKERMAN</h4>
+                    <p class="opacity-75">IMPLANTÓLOGA</p>
+                    <p>"Cuidando la salud y el bienestar de tus mascotas con pasión y dedicación."</p>
+                </div>
+                <div class="col-lg-3 my-4">
+                    <img src={% static 'img/veterinario2.jpg' %} class="rounded-circle" width="140" height="140">
+                    <h4 class="fw-normal fw-bold mt-3">JHON ESCALANTE</h4>
+                    <p class="opacity-75">ODONTOPEDIATRA</p>
+                    <p>"Comprometido con la prevención y el tratamiento de enfermedades animales."</p>
+                </div>
+                <div class="col-lg-3 my-4">
+                    <img src={% static 'img/veterinario3.jpg' %} class="rounded-circle" width="140" height="140">
+                    <h4 class="fw-normal fw-bold mt-3">PEDRO LABORIE</h4>
+                    <p class="opacity-75">REHABILITADOR</p>
+                    <p>"Brindando atención veterinaria de calidad para mantener a tus mascotas felices y saludables."
+                    </p>
+                </div>
+                <div class="col-lg-3 mt-4 mb-5">
+                    <img src={% static 'img/veterinario4.jpg' %} class="rounded-circle" width="140" height="140">
+                    <h4 class="fw-normal fw-bold mt-3">ROSA VALDÉS</h4>
+                    <p class="opacity-75">ENDODONCISTA</p>
+                    <p>"Tu confianza es nuestra prioridad; trabajamos para proporcionar el mejor cuidado para tus
+                        mascotas."</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row featurette align-items-center mt-3 p-3 mt-lg-5 p-lg-5">
+                <div class="col-lg-4">
+                    <img src={% static 'img/clinica1.png' %} class="img-fluid" alt="Imagen de la clínica">
+                </div>
+                <div class="col-lg-8 mt-3">
+                    <h2 class="featurette-heading fw-normal lh-1">Bienvenido a nuestra clínica veterinaria.<br><span class="text-muted">Tu lugar de confianza.</span></h2>
+                    <p class="lead mt-3">En nuestra clínica, no solo encontrarás un lugar para tratar a tus mascotas, sino también
+                        un hogar para ellas. Con instalaciones modernas y un equipo dedicado, estamos aquí para proporcionar
+                        el mejor cuidado posible para tus amigos peludos.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container-fluid bg-light">
+        <div class="container">
+            <div class="row featurette align-items-center mt-3 p-3 mt-lg-2 p-lg-5">
+                <div class="col-lg-4">
+                    <img src={% static 'img/clinica2.png' %} class="img-fluid" alt="Imagen del equipo">
+                </div>
+                <div class="col-lg-8 mt-3">
+                    <h2 class="featurette-heading fw-normal lh-1">Instalaciones de nuestra clínica veterinaria.<br><span class="text-muted">Te sorprenderán.</span></h2>
+                    <p class="lead mt-3">Descubre nuestras modernas instalaciones diseñadas pensando en el bienestar de tus mascotas.
+                        Conoce nuestros espacios especializados para consultas, cirugías, hospitalización y mucho más.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row featurette align-items-center mt-3 mb-3 p-3 mt-lg-2 mb-lg-5 p-lg-5">
+                <div class="col-lg-4">
+                    <img src={% static 'img/clinica3.png' %} class="img-fluid" alt="Imagen de servicios">
+                </div>
+                <div class="col-lg-8 mt-3">
+                    <h2 class="featurette-heading fw-normal lh-1">Descubre nuestro centro veterinario.<br><span class="text-muted">Un lugar de confianza.</span></h2>
+                    <p class="lead mt-3">Te invitamos a conocer nuestro centro veterinario donde el amor por los animales se refleja
+                        en cada detalle. Desde nuestras salas de espera acogedoras hasta nuestras áreas de tratamiento
+                        avanzadas, cada aspecto ha sido cuidadosamente diseñado para el bienestar de tus mascotas.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <hr class="footer__hr"/>
+</body>
+{% endblock %}

@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+{% load static %}
+<title>Servicios</title>
+<div class="container-fluid container__servicios">
+<div class="container py-5">
+    <h2 class="text-center mb-4 titulo__servicios">Nuestros Servicios</h2>
+    <hr class="footer__hrh"/>
+    <div class="row">
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="service-container">
+                <a href="#">
+                    <div class="service-overlay"></div>
+                    <img class="service-image" src="{% static 'img/DESPARACITACIÓN.png' %}" alt="Desparacitación">
+                    <div class="service-details fadeIn-bottom">
+                        <h3 class="service-title">Desparacitación</h3>
+                        <p class="service-description">Servicio de desparacitación para mascotas</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="service-container">
+                <a href="#">
+                    <div class="service-overlay"></div>
+                    <img class="service-image" src="{% static 'img/ESTERILIZACIÓN.png' %}" alt="Esterilización">
+                    <div class="service-details fadeIn-bottom">
+                        <h3 class="service-title">Esterilización</h3>
+                        <p class="service-description">Servicio de esterilización para mascotas</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="service-container">
+                <a href="#">
+                    <div class="service-overlay"></div>
+                    <img class="service-image" src="{% static 'img/ESTÉTICA.png' %}" alt="Estética">
+                    <div class="service-details fadeIn-bottom">
+                        <h3 class="service-title">Estética</h3>
+                        <p class="service-description">Servicio de estética para mascotas</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="service-container">
+                <a href="#">
+                    <div class="service-overlay"></div>
+                    <img class="service-image" src="{% static 'img/MEDICINA GENERAL.png' %}" alt="Medicina General">
+                    <div class="service-details fadeIn-bottom">
+                        <h3 class="service-title">Medicina General</h3>
+                        <p class="service-description">Consulta médica general para mascotas</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="service-container">
+                <a href="#">
+                    <div class="service-overlay"></div>
+                    <img class="service-image" src="{% static 'img/EUTANACIA.png' %}" alt="Eutanasia">
+                    <div class="service-details fadeIn-bottom">
+                        <h3 class="service-title">Eutanasia</h3>
+                        <p class="service-description">Servicio de eutanasia humanitaria para mascotas</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="service-container">
+                <a href="#">
+                    <div class="service-overlay"></div>
+                    <img class="service-image" src="{% static 'img/IMAGENOLOGÍA.png' %}" alt="Imagenología">
+                    <div class="service-details fadeIn-bottom">
+                        <h3 class="service-title">Imagenología</h3>
+                        <p class="service-description">Servicio de imágenes diagnósticas para mascotas</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+{% endblock %}

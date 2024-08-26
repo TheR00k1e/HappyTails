@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% block contenido %}
+{% load static %}
+<title>Contacto</title>
+
+<body>
+    <div class="container-fluid container__contacto">
+        <div class="container py-4 py-md-3 py-lg-5">
+            <div class="row">
+                <div class="col-12 col-md-4 col-lg-4 text-white">
+                    <div class="d-flex gap-2 w-100 justify-content-center text-left p-4 p-md-3 p-lg-2">
+                        <div>
+                            <h4 class="mt-2"><i class="bi bi-geo-alt-fill ms-0 me-2 text-white"></i>Visítanos</h4>
+                            <p class="mb-0 opacity-75">Clínica Veterinaria HappyTails</p>
+                            <p class="mb-0 opacity-75">Cam. Los Cazadores 4672, Lo Barnechea</p>
+                            <p class="mb-0 opacity-75">Horario de atención:<br>
+                                Lunes a Domingo desde 9:00hrs a 20:00hrs</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 col-lg-4 text-white">
+                    <div class="d-flex gap-2 w-100 justify-content-center text-left p-4 p-md-3 p-lg-2">
+                        <div>
+                            <h4 class="mt-2"><i class="bi bi-telephone-inbound-fill ms-0 me-2 text-white"></i>Contacto</h4>
+                            <p class="mb-0 opacity-75">600 600 4250</p>
+                            <p class="mb-0 opacity-75">contacto@happytails.cl</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 col-lg-4 text-white">
+                    <div class="d-flex gap-2 w-100 justify-content-center text-left p-4 p-md-3 p-lg-2">
+                        <div>
+                            <h4 class="mt-2"><i class="bi bi-suitcase-lg-fill ms-0 me-2 text-white"></i>Trabaja con nosotros</h4>
+                            <p class="mb-0 opacity-75">¿Quieres formar parte de nuestro equipo?<br>
+                                Postula <a href="https://docs.google.com/forms/d/e/1FAIpQLSeDJ37aL-7sjGYgMh--IqbxMUPJ-JIqWkbZmUh3jGXGArWZsA/viewform?usp=sf_link" class="link__trabajo" target="_blank">aquí</a>, te estaremos esperando.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mx-auto">
+                <div class="col-lg-8 d-md-block d-lg-none mt-5 mb-0" style="height: 400px;">
+                    <iframe src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=-33.334333,%20-70.542333+(Cl%C3%ADnica%20HappyTails)&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card p-3 p-lg-4 mt-5 mb-5">
+                        <div class="row">
+                            <div class="col-12 col-lg-4">
+                                <h2 class="mb-4"><span class="exclamacion">¡</span>Contáctanos<span class="exclamacion">!</span></h2>
+                                <form method="post" action="{% url 'contacto' %}">
+                                    {% csrf_token %}
+                                    <div class="form-floating mb-4">
+                                        <input type="text" name="nombre" class="form-control rounded-3" id="nombre" placeholder="Nombre" required>
+                                        <label for="nombre">Nombre</label>
+                                    </div>
+                                    <div class="form-floating mb-4">
+                                        <input type="email" name="email" class="form-control rounded-3" id="email" placeholder="correo@ejemplo.com" required>
+                                        <label for="email">Correo electrónico</label>
+                                    </div>
+                                    <div class="form-floating mb-4">
+                                        <input type="text" name="telefono" class="form-control rounded-3" id="telefono" placeholder="Número de teléfono" required>
+                                        <label for="telefono">Número de teléfono</label>
+                                    </div>
+                                    <div class="form-floating mb-4">
+                                        <textarea class="form-control rounded-3" name="mensaje" style="height: 200px;" placeholder="Tú comentario aquí" id="mensaje" required></textarea>
+                                        <label for="mensaje">Tú comentario aquí</label>
+                                    </div>
+                                    <div class="my-2 text-decoration-none">
+                                        <br>
+                                    </div>
+                                    <button class="w-100 mb-2 btn btn-lg btn-acceder boton-registrarse" type="submit">Enviar</button>
+                                </form>
+                            </div>
+                            <div class="col-8 d-none d-lg-block">
+                                <iframe src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=-33.334333,%20-70.542333+(Cl%C3%ADnica%20HappyTails)&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock %}

@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% block contenido %}
+{% load static %}
+<title>Editar Datos Cliente</title>
+<body>
+    <main>
+        <div class="modal modal-signin position-static d-block py-5">
+            <div class="modal-dialog my-5">
+                <div class="modal-content rounded-5 shadow">
+                    {% if form.errors %}
+                    <div class="modal-content shadow text-center error rounded-bottom rounded-5">
+                        <span class="rounded-bottom rounded-5">Corrige los errores en el formulario.</span>
+                    </div>
+                    {% endif %}
+                    {% if success %}
+                    <div class="modal-content shadow text-center success rounded-bottom rounded-5">
+                        <span class="rounded-bottom rounded-5">Datos guardados correctamente.</span>
+                    </div>
+                    {% endif %}
+                    <div class="d-flex justify-content-center py-4">
+                        <a class="login__logo navbar-brand" href="{% url 'index' %}">Happy<span>Tails</span>&trade;</a>
+                    </div>
+                    <div class="modal-header pb-2 border-bottom-0 justify-content-center">
+                        <h2 class="h3 mt-2 mb-4">Editar Datos</h2>
+                    </div>
+                    <div class="modal-body p-5 pt-0">
+                        <form method="post" id="editar-cliente-form">
+                            {% csrf_token %}
+                            {{ form.non_field_errors }}
+                            <div class="form-floating mb-4">                                
+                                {{ form.telefono_cliente|add_class:"form-control rounded-4"|attr:"placeholder:Teléfono" }}
+                                <label for="{{ form.telefono_cliente.id_for_label }}">Teléfono +596</label>
+                                {% if form.telefono_cliente.errors %}
+                                <div class="invalid-feedback d-block">
+                                    {{ form.telefono_cliente.errors }}
+                                </div>
+                                {% endif %}
+                            </div>
+
+                            <div class="form-floating mb-4">
+                                {{ form.direccion_cliente|add_class:"form-control rounded-4"|attr:"placeholder:Dirección" }}
+                                <label for="{{ form.direccion_cliente.id_for_label }}">Dirección</label>
+                                {% if form.direccion_cliente.errors %}
+                                <div class="invalid-feedback d-block">
+                                    {{ form.direccion_cliente.errors }}
+                                </div>
+                                {% endif %}
+                            </div>
+
+                            <div class="form-floating mb-4">
+                                {{ form.comuna|add_class:"form-select form-control rounded-4" }}
+                                <label for="{{ form.comuna.id_for_label }}">Seleccione Comuna</label>
+                                {% if form.comuna.errors %}
+                                <div class="invalid-feedback d-block">
+                                    {{ form.comuna.errors }}
+                                </div>
+                                {% endif %}
+                            </div>
+
+                            <div class="form-floating mb-4">
+                                {{ form.estado_civil|add_class:"form-select form-control rounded-4" }}
+                                <label for="{{ form.estado_civil.id_for_label }}">Seleccione Estado Civil</label>
+                                {% if form.estado_civil.errors %}
+                                <div class="invalid-feedback d-block">
+                                    {{ form.estado_civil.errors }}
+                                </div>
+                                {% endif %}
+                            </div>
+
+                            <button class="w-100 mb-2 btn btn-lg btn-acceder boton-registrarse" type="submit">Guardar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('editar-cliente-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita el envío predeterminado del formulario
+            
+            // Simulación de guardar datos
+            setTimeout(function() {
+                // Muestra un mensaje de éxito con SweetAlert2
+                Swal.fire({
+                    icon: 'success',
+                    title: '¡Datos guardados correctamente!',
+                    showConfirmButton: true,
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // Redirigir a la misma página para refrescar los datos
+                        document.getElementById('editar-cliente-form').submit();
+                    }
+                });
+            }, 1000); // Simulación de una espera de 1 segundo antes de mostrar el mensaje
+        });
+    });
+</script>
+{% endblock %}
