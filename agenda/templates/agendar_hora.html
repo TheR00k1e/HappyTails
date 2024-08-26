@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% block contenido %}
+{% load static %}
+<title>Agenda tu hora</title>
+<body>
+  <main>
+    <div class="modal modal-signin position-static d-block py-5">
+        <div class="modal-dialog my-5">
+            <div class="modal-content rounded-5 shadow">
+                <div class="d-flex justify-content-center py-4">
+                    <a class="login__logo navbar-brand" href="{% url 'index' %}">Happy<span>Tails</span>&trade;</a>
+                </div>
+                <div class="modal-header pb-2 border-bottom-0 justify-content-center">
+                    <h1 class="h3 mt-2 mb-1">Agenda tu hora</h1>
+                </div>
+                <div class="text-center mb-4">
+                    <span>Completa el formulario para agendar tu hora</span>
+                </div>
+                <div class="modal-body p-5 pt-0">
+                  <form class="form-horizontal" method="post" action="{% url 'agendar' %}" id="agenda-form">
+                        {% csrf_token %}
+                        {% for error in form.non_field_errors %}
+                        <div class="alert alert-danger">
+                          {{ error }}
+                      </div>
+                      {% endfor %}
+                      <fieldset>
+                          <div class="form-group{% if form.veterinario.errors %} has-error{% endif %}">
+                            <label for="{{ form.veterinario.auto_id }}" class="control-label">{{ form.veterinario.label }}</label>
+                            <div class="col-12 mb-3">
+                              {% render_field form.veterinario class="form-control" %}
+              
+                              {% for error in form.veterinario.errors %}
+                              <span class="help-block">{{ error }}</span>
+                              {% endfor %}
+                            </div>
+                          </div>
+                          <div class="form-group{% if form.sucursal.errors %} has-error{% endif %}">
+                              <label for="{{ form.sucursal.auto_id }}" class="control-label">
+                                  {{ form.sucursal.label }}
+                              </label>
+                              <div class="col-12 mb-3">
+                                  {% render_field form.sucursal class="form-control" %}
+                          
+                                  {% for error in form.sucursal.errors %}
+                                  <span class="help-block">{{ error }}</span>
+                                  {% endfor %}
+                              </div>
+                          </div>
+                          <div class="form-group{% if form.fecha_cita.errors %} has-error{% endif %}">
+                            <label for="{{ form.fecha_cita.auto_id }}" class="col-md-3 control-label">
+                            {{ form.fecha_cita.label }}</label>
+                            <div class="col-12 mb-3">
+                              {% render_field form.fecha_cita type="date" class="form-control" placeholder="01/01/2022" %}
+                              {% for error in form.fecha_cita.errors %}
+                              <span class="help-block">{{ error }}</span>
+                              {% endfor %}
+                            </div>
+                          </div>
+                          <div class="form-group{% if form.horario.errors %} has-error{% endif %}">
+                            <label for="{{ form.horario.auto_id }}" class="col-md-3 control-label">
+                            {{ form.horario.label }}</label>
+                            <div class="col-12 mb-3">
+                              {% render_field form.horario class="form-control" %}
+                              {% for error in form.horario.errors %}
+                              <span class="help-block">{{ error }}</span>
+                              {% endfor %}
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="col-12">
+                              <button type="submit" class="w-100 btn btn-lg btn-acceder mt-5" id="submit-btn">Aceptar</button>
+                            </div>
+                          </div>
+                      </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+  </main>
+</body>
+{% endblock %}

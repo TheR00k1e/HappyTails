@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Confirmar eliminación de cita
+{% endblock %}
+
+{% block contenido %}
+    <body>
+        <main>
+            <div class="modal modal-signin position-static d-block py-5">
+                <div class="modal-dialog my-5">
+                    <div class="modal-content rounded-5 shadow">
+                        <div class="modal-header pb-2 border-bottom-0 justify-content-center">
+                            <h2 class="mt-2 mb-1 text-center">¿Está seguro de que desea eliminar esta cita?</h2>
+                        </div>
+                        <div class="text-center mb-4">
+                            <span >Cita a eliminar: <br>
+                                {{ object }}</span>
+                        </div>
+                        <div class="modal-body p-5 pt-0">
+                            <form action="{% url 'eliminar_cita' object.pk %}" method="post">
+                                {% csrf_token %}
+                                <br>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <a href="{% url 'lista_citas' %}" class="btn btn-acceder btn-lg w-100 ">Cancelar</a>
+                                    </div>
+                                    <div class="col-6">
+                                        <button class="w-100  btn btn-lg btn-acceder" type="submit">Confirmar</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+{% endblock %}

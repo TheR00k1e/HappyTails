@@ -1,0 +1,58 @@
+{% extends 'base.html' %} 
+{% load widget_tweaks %} 
+{% block contenido %}
+{% load static %}
+<body>
+    <main>
+        <div class="container-fluid bg-verde">
+            <div class="container p-5">
+                <h2 class="text-center py-5 text-white">Citas Clientes</h2>
+                <div class="mb-3 text-end">
+                    <table class="table table-light table-sm table-bordered-dark table-hover text-center tabla-citas">
+                        <thead>
+                            <tr>
+                                <th class="tabla-esquina-1">Nombre Cliente</th>
+                                <th>Veterinario</th>
+                                <th>Fecha cita</th>
+                                <th>Horario cita</th>
+                                <th class="tabla-esquina-2">Opciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for cita in object_list %}
+                            <tr>
+                                <td class="text-capitalize">{{ cita.usuario.first_name }} {{ cita.usuario.last_name }}</td>
+                                <td>{{ cita.veterinario }}</td>
+                                <td>{{ cita.fecha_cita|date:"d/m/Y" }}</td>
+                                <td>{{ cita.get_horario_display }}</td>
+                                <td>
+                                    <a href="{% url 'eliminar_cita' cita.id %}" class="mr-1 text-danger" style="padding-left: 10px; text-decoration: none">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            {% empty %}
+                            <tr>
+                                <td colspan="2">No hay citas registradas.</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                        <thead>
+                            <tr>
+                                <th class="tabla-esquina-3"><br></th>
+                                <th><br></th>
+                                <th><br></th>
+                                <th><br></th>
+                                <th class="tabla-esquina-4"><br></th>
+                            </tr>
+                        </thead>   
+                    </table>
+                </div> 
+            </div>
+        </div>
+    </main>
+</body>
+{% endblock %}
